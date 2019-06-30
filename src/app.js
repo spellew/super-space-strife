@@ -59,6 +59,8 @@ const setUp_publicInstance = (public) => {
 try {
 
   var site = null;
+  console.log("process.PORT", process.env.PORT);
+  console.log("process.PROJECT_DOMAIN", process.env.PROJECT_DOMAIN);
   const port = process.env.PORT || 3000;
   const domain = process.env.PROJECT_DOMAIN;
   const admin = path.join(__dirname, "../admin");
