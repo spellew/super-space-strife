@@ -1,3 +1,5 @@
+const http = require("http");
+
 module.exports = {
 	setUp_jsdomCanvas: (site, admin) => {
 		return new Promise(async (resolve, reject) => {
