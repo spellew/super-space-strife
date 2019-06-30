@@ -19,7 +19,7 @@ function createWindow () {
   mainWindow.setResizable(false);
 
   // and load the app.
-  mainWindow.loadURL('http://localhost:8080/');
+  mainWindow.loadURL('http://localhost:3000/');
   mainWindow.setMinimizable(false);
 
   // Open the DevTools.
