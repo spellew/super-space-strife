@@ -1,16 +1,26 @@
 {
     "name": "Super Space Strife",
     "icons": [
-        {
-        "src": "/icons-192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-        },
-        {
-        "src": "/icons-512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-        }
+      {
+      "src": "/icons-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+      },
+      {
+      "src": "/icons-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+      },
+      {
+      "src": "/icons-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+      },
+      {
+      "src": "/icons-16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+      }
     ],
     "start_url": "/",
     "background_color": "#3a2e3f",
