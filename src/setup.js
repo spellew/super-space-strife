@@ -10,7 +10,6 @@ module.exports = {
 	
 				// This headless browser runs on the server to validate user actions
 				const window = (await JSDOM.fromFile(admin + "/index.html", {
-					url: "http://localhost:3000",
 					runScripts: "dangerously",
 					resources: "usable",
 					pretendToBeVisual: true
