@@ -16,6 +16,7 @@ const setUp_reverseProxy = (port) => {
   server.listen(port);
   app.use(function(req, res) { // only localhost may visit admin server
     const ip = require('request-ip').getClientIp(req);
+    console.log("New Request IP: " + ip);
     if (localhosts.includes(ip)) {
       proxy.web(req, res, { target: 'http://localhost:8080/' });
     } else {
