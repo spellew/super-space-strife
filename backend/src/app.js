@@ -6,8 +6,11 @@ const server = require("http").Server(app);
 const server2 = require("http").Server(app2);
 const io = require("socket.io")(server);
 
-
+// This points to the admin version of our game,
+// which reacts to socket messages from the client.
 const admin = path.join(__dirname, "../admin");
+// This serves the public version of our game,
+// which reacts to user controls and sends messages to the admin version.
 const public = path.join(__dirname, "../public");
 const port = 8080;
 const headless = new Promise(async (resolve, reject) => {
@@ -16,12 +19,15 @@ const headless = new Promise(async (resolve, reject) => {
 
     server.listen(port);
     server2.listen(port + 1);
+    // Serves the game to users
     app.use("/", express.static(public));
+    // Serves the game to itself, which it will then play
     app2.use("/", express.static(admin));
 
     const jsdom = require("jsdom");
     const { JSDOM } = jsdom;
 
+    // This headless browser runs on the server to validate user actions
     const window = (await JSDOM.fromFile(admin + "/index.html", {
       url: "http://localhost:" + (port + 1),
       runScripts: "dangerously",
@@ -47,7 +53,7 @@ const headless = new Promise(async (resolve, reject) => {
   
 });
 
-
+// This runs after our servers and headless browser has been setup.
 headless
   .then((window) => {
 
